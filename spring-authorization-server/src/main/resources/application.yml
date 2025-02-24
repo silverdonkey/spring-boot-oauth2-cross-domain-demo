@@ -1,0 +1,37 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    org.springframework.security: trace
+
+spring:
+  application:
+    name: oauth2-authorization-server
+  security:
+    oauth2:
+      authorization-server:
+        federation:
+          main-server:
+            issuer-uri: http://localhost:8080/auth/realms/baeldung
+        client:
+          service-client-1:
+            registration:
+              client-id: service-client-1
+              client-secret: "{noop}service-secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "client_credentials"
+            token:
+              access-token-time-to-live: 600s
+          exchange-client-1:
+            registration:
+              client-id: exchange-client-1
+              client-secret: "{noop}exchange-secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "urn:ietf:params:oauth:grant-type:token-exchange"
+            token:
+              access-token-time-to-live: 3600s

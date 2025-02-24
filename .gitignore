@@ -1,0 +1,19 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+**/*.pem
+**/*.crt
+**/.env.*
+**/target/
+**/build/
+**/.metadata
+**/*.project
+**/*.settings
+**/*.classpath
+**/*.factorypath
+compose-*.yml
+compose-*.yml''
