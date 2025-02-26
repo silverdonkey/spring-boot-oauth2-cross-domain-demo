@@ -14,6 +14,12 @@ import org.springframework.security.oauth2.server.authorization.authentication.O
 import org.springframework.security.oauth2.server.authorization.token.JwtEncodingContext;
 import org.springframework.security.oauth2.server.authorization.token.OAuth2TokenCustomizer;
 
+/**
+ * An {@link OAuth2TokenCustomizer} to customize claims of
+ * the {@code access_token} produced by this authorization server.
+ *
+ * @author Nikolay orozov
+ */
 public class MyJwtCustomizer implements OAuth2TokenCustomizer<JwtEncodingContext> {
 
     private final Log logger = LogFactory.getLog(getClass());
